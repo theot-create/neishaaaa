@@ -1,0 +1,165 @@
+<!DOCTYPE html><html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Untuk Kamu 🤍</title>  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #fbd3e9, #bb377d);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.92);
+      max-width: 650px;
+      padding: 45px 35px;
+      border-radius: 24px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18);
+      animation: fadeUp 1.6s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.4rem;
+      color: #c2185b;
+      margin-bottom: 22px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.9;
+      color: #444;
+      margin-bottom: 22px;
+    }
+
+    footer {
+      margin-top: 28px;
+      font-size: 0.95rem;
+      color: #777;
+      font-style: italic;
+    }
+
+    .heart {
+      font-size: 3rem;
+      color: #e91e63;
+      margin-bottom: 15px;
+      animation: pulse 1.3s infinite;
+    }
+
+    .play-btn {
+      margin-top: 25px;
+      background: #e91e63;
+      color: #fff;
+      border: none;
+      padding: 12px 26px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+
+    .play-btn:hover {
+      background: #c2185b;
+      transform: scale(1.05);
+    }
+
+    /* Love animation */
+    .love {
+      position: absolute;
+      top: -10px;
+      color: rgba(255, 255, 255, 0.8);
+      animation: fall linear infinite;
+      font-size: 1.2rem;
+      z-index: 1;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.25); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style></head>
+<body>  <audio id="music" loop>
+    <source src="you-lany.mp3" type="audio/mpeg" />
+  </audio>  <div class="card">
+    <div class="heart">❤</div>
+    <h1>Untuk Kamu</h1><p>
+  Aku sayang sama kamu, mungkin kalau disebutin semuanya banyak.
+  Terlalu banyak sampai aku sendiri bingung harus mulai dari mana.
+</p>
+
+<p>
+  Aku sayang caramu tertawa, caramu diam, dan caramu hadir di hidupku
+  tanpa pernah benar-benar berusaha, tapi selalu berhasil.
+</p>
+
+<p>
+  Kalau suatu hari kamu ragu, ingat satu hal ini:
+  aku mungkin tidak sempurna, tapi perasaanku ke kamu selalu sungguh-sungguh.
+</p>
+
+<button class="play-btn" onclick="playMusic()">Putar Musik 🎶</button>
+
+<footer>
+  — dari aku, yang selalu memilih kamu
+</footer>
+
+  </div>  <script>
+    const music = document.getElementById('music');
+
+    function playMusic() {
+      music.play();
+    }
+
+    function createLove() {
+      const love = document.createElement('div');
+      love.classList.add('love');
+      love.innerHTML = '❤';
+      love.style.left = Math.random() * 100 + 'vw';
+      love.style.animationDuration = Math.random() * 3 + 4 + 's';
+      document.body.appendChild(love);
+
+      setTimeout(() => {
+        love.remove();
+      }, 7000);
+    }
+
+    setInterval(createLove, 300);
+  </script></body>
+</html>
