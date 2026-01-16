@@ -2,7 +2,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Untuk Kamu 🤍</title>  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">  <style>
+  <title>Untuk Neishaa Imut 💗</title>  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">  <style>
+    .photo {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 18px;
+      border: 4px solid #e91e63;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: fadeUp 1.5s ease;
+    }
     * {
       margin: 0;
       padding: 0;
@@ -119,20 +129,46 @@
     <source src="you-lany.mp3" type="audio/mpeg" />
   </audio>  <div class="card">
     <div class="heart">❤</div>
-    <h1>Untuk Kamu</h1><p>
-  Aku sayang sama kamu, mungkin kalau disebutin semuanya banyak.
-  Terlalu banyak sampai aku sendiri bingung harus mulai dari mana.
+    <img src="foto-kamu.jpg" alt="Foto Kamu" class="photo">
+    <h1 id="name">Untuk Neishaa Imut</h1><p>
+  Jadi kalau suatu hari kamu capek, ragu,
+  atau ngerasa dunia lagi nggak ramah,
+  inget satu hal ini ya:
+  aku di sini, nggak ke mana-mana,
+  dan perasaanku ke kamu itu serius.
 </p>
 
-<p>
-  Aku sayang caramu tertawa, caramu diam, dan caramu hadir di hidupku
-  tanpa pernah benar-benar berusaha, tapi selalu berhasil.
-</p>
+<button class="play-btn" onclick="playMusic()">Putar Musik 🎶</button>
 
-<p>
-  Kalau suatu hari kamu ragu, ingat satu hal ini:
-  aku mungkin tidak sempurna, tapi perasaanku ke kamu selalu sungguh-sungguh.
-</p>
+<footer>
+  — dari aku, yang selalu memilih kamu
+</footer>
+
+  </div>  <script>
+    const nama = "Neisha, sayangku"; // nama romantis // GANTI NAMA DI SINI
+    document.getElementById('name').innerText = `Untuk ${nama}`;
+    const music = document.getElementById('music');
+
+    function playMusic() {
+      music.play();
+    }
+
+    function createLove() {
+      const love = document.createElement('div');
+      love.classList.add('love');
+      love.innerHTML = '❤';
+      love.style.left = Math.random() * 100 + 'vw';
+      love.style.animationDuration = Math.random() * 3 + 4 + 's';
+      document.body.appendChild(love);
+
+      setTimeout(() => {
+        love.remove();
+      }, 7000);
+    }
+
+    setInterval(createLove, 300);
+  </script></body>
+</html></p>
 
 <button class="play-btn" onclick="playMusic()">Putar Musik 🎶</button>
 
